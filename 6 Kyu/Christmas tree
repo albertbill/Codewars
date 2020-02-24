@@ -1,0 +1,38 @@
+//Create a function christmasTree(height) or christmas_tree(height) (in Ruby) that returns a christmas tree of the correct height
+
+//christmasTree(5) || christmas_tree(height) should return:
+
+//    *    
+//   ***   
+//  *****  
+// ******* 
+//*********
+//Height passed is always an integer between 0 and 100.
+
+//Use \n for newlines between each line.
+//Pad with spaces so each line is the same length. The last line having only stars, no spaces.
+
+const christmasTree = (height) => {
+  let res=[];
+  let count=1;
+  let countMin=height-2;
+  let countMax=height-2;
+  for(let i=0;i<height;i++) {
+    let temp='';
+    for(let j=0;j<=countMin;j++) {
+      temp=temp+' ';
+    }
+    for(let k=0;k<i+count;k++) {
+      temp=temp+'*';
+    }
+    for(let l=0;l<=countMax;l++) {
+      temp=temp+' ';
+    }
+    countMin--;
+    countMax--;
+    count++;
+    res.push(temp);
+  }
+  res=res.join('\n');
+  return res;
+}
