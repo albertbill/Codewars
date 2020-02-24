@@ -1,0 +1,22 @@
+//Bob is a lazy man.
+
+//He needs you to create a method that can determine how many letters and digits are in a given string.
+
+//Example:
+
+//"hel2!lo" --> 6
+
+//"wicked .. !" --> 6
+
+//"!?..A" --> 1
+
+function countLettersAndDigits(input) {
+  let arrAbjad = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+  let arrHasil=[];
+  for(value of input) {
+    if(arrAbjad.indexOf(value)!==-1) {
+      arrHasil.push(value);
+    }
+  }
+  return arrHasil.length;
+}
