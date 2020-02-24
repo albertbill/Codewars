@@ -1,0 +1,44 @@
+//Given: an array containing hashes of names
+
+//Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
+
+//Example:
+//list([ {name: 'Bart'}, {name: 'Lisa'}, {name: 'Maggie'} ])
+// returns 'Bart, Lisa & Maggie'
+
+//list([ {name: 'Bart'}, {name: 'Lisa'} ])
+// returns 'Bart & Lisa'
+
+//list([ {name: 'Bart'} ])
+// returns 'Bart'
+
+//list([])
+// returns ''
+//Note: all the hashes are pre-validated and will only contain A-Z, a-z, '-' and '.'.
+
+function list(names){
+  let temp = names.map(({ name }) => name);
+  let arrLastTwo = [];
+  let arrNama = [];
+  if(temp.length>2) {
+    if(temp.length > 2) {
+    for(let i=0;i<temp.length;i++) {
+      if(i>=temp.length-2)
+        arrLastTwo.push(temp[i]);
+      else
+        arrNama.push(temp[i]);
+    }
+    arrLastTwo=arrLastTwo.join(" & ");
+    arrLastTwo=arrLastTwo.split("  ");
+    arrNama.push(arrLastTwo);
+    arrNama=arrNama.join(", ")
+    return arrNama;
+    }
+  } else if(temp.length==2) {
+    temp=temp.join(" & ")
+    return temp;
+  } else {
+    temp=temp.join("");
+    return temp;
+  }
+}
