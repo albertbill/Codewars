@@ -1,0 +1,29 @@
+//Your task is to write an update for a lottery machine. Its current version produces a sequence of random letters and integers (passed as a string to the function). Your code must filter out all letters and return unique integers as a string, in their order of first appearance. If there are no integers in the string return "One more run!"
+
+//Examples
+//"hPrBKWDH8yc6Lt5NQZWQ"  -->  "865"
+//"ynMAisVpHEqpqHBqTrwH"  -->  "One more run!"
+//"555"                   -->  "5"
+
+function lottery(str){
+  let angka= ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+  let newStr=[];
+  let arrHasil=[];
+  for(value of str) {
+    if(angka.indexOf(value)!==-1) {
+      newStr.push(value);
+    }
+  }
+  
+  if(newStr === undefined || newStr.length==0) {
+    return "One more run!";
+  } else {
+    for(nilai of newStr) {
+      if(arrHasil.indexOf(nilai)===-1) {
+        arrHasil.push(nilai)
+      } 
+    }
+    arrHasil=arrHasil.join("");
+    return arrHasil;
+  }
+}
