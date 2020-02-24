@@ -1,0 +1,43 @@
+//#Find the missing letter
+
+//Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.
+
+//You will always get an valid array. And it will be always exactly one letter be missing. The length of the array will always be at least 2.
+//The array will always contain letters in only one case.
+
+//Example:
+
+//['a','b','c','d','f'] -> 'e' ['O','Q','R','S'] -> 'P'
+//["a","b","c","d","f"] -> "e"
+//["O","Q","R","S"] -> "P"
+
+function findMissingLetter(array) {
+  let arrAbjad = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  let tempAlpha=[]; let firstLetter=0; let lastLetter=0; let res=[];
+
+  for(let i=0;i<array.length;i++) {
+    for(let j=0;j<arrAbjad.length;j++) {
+      if(i===0) {
+        if(array[i]===arrAbjad[j]) {
+          firstLetter=j;
+        }
+      }
+      if(i===array.length-1) {
+        if(array[i]===arrAbjad[j]) {
+          lastLetter=j;
+        }
+      }
+    }
+  }
+  for(k=0;k<=arrAbjad.length;k++) {
+    if(k>=firstLetter && k<=lastLetter) {
+      tempAlpha.push(arrAbjad[k]);
+    }
+  }
+  for(let value of tempAlpha) {
+    if(array.indexOf(value)===-1) {
+      res.push(value);
+    }
+  }
+  return res.join('');
+}
