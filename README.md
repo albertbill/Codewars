@@ -1,5 +1,5 @@
 # Codewars
 
-https://www.codewars.com/users/albertbill/badges/large
+<img src="https://www.codewars.com/users/albertbill/badges/large">
 
-My code to solve Codewars katas. 
+Some of my solutions for Katas (Codewars challenges). 
