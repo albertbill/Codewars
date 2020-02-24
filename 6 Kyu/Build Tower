@@ -1,0 +1,46 @@
+//Build Tower
+//Build Tower by the following given argument:
+//number of floors (integer and always greater than 0).
+//Tower block is represented as *
+//JavaScript: returns an Array;
+
+//for example, a tower of 3 floors looks like below
+//[
+//  '  *  ', 
+//  ' *** ', 
+//  '*****'
+//]
+
+//and a tower of 6 floors looks like below
+//[
+//  '     *     ', 
+//  '    ***    ', 
+//  '   *****   ', 
+//  '  *******  ', 
+//  ' ********* ', 
+//  '***********'
+//]
+
+function towerBuilder(nFloors) {
+  let res=[];
+  let count=1;
+  let countMin=nFloors-2;
+  let countMax=nFloors-2;
+  for(let i=0;i<nFloors;i++) {
+    let temp='';
+    for(let j=0;j<=countMin;j++) {
+      temp=temp+' ';
+    }
+    for(let k=0;k<i+count;k++) {
+      temp=temp+'*';
+    }
+    for(let l=0;l<=countMax;l++) {
+      temp=temp+' ';
+    }
+    countMin--
+    countMax--
+    count++
+    res.push(temp);
+  }
+  return res;
+}
