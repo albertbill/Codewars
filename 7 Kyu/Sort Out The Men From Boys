@@ -1,0 +1,44 @@
+//Task
+//Given an array/list [] of n integers , Separate The even numbers from the odds , or Separate the men from the boys !alt !alt
+
+//Notes
+//Return an array/list where Even numbers come first then odds
+
+//Since , Men are stronger than Boys , Then Even numbers in ascending order While odds in descending .
+
+//Array/list size is at least *4*** .
+
+//Array/list numbers could be a mixture of positives , negatives .
+
+//Have no fear , It is guaranteed that no Zeroes will exists . !alt
+
+//Repetition of numbers in the array/list could occur , So (duplications are not included when separating).
+
+//Input >> Output Examples:
+//menFromBoys ({7, 3 , 14 , 17}) ==> return ({14, 17, 7, 3}) 
+//Explanation:
+//Since , { 14 } is the even number here , So it came first , then the odds in descending order {17 , 7 , 3} .
+
+function menFromBoys(arr){
+  let arrHasil=[];
+  let arrOdd=[];
+  let final=[];
+  for(let value of arr) {
+    if(value%2==0) {
+      arrHasil.push(value);
+    } else {
+      arrOdd.push(value);
+    }
+  }
+  arrHasil.sort(function(a, b){return a-b});
+  arrOdd=arrOdd.sort((a, b) => (a > b ? -1 : 1));
+  for(let i=0;i<arrOdd.length;i++) {
+    arrHasil.push(arrOdd[i]);
+  }
+  for(let lastValue of arrHasil) {
+    if(final.indexOf(lastValue)===-1) {
+      final.push(lastValue);
+    }
+  }
+  return final;
+}
