@@ -1,0 +1,40 @@
+// ###Task:
+
+// You have to write a function pattern which creates the following pattern (see examples) up to the desired number of rows.
+
+// If the Argument is 0 or a Negative Integer then it should return "" i.e. empty string.
+
+// If any even number is passed as argument then the pattern should last upto the largest odd number which is smaller than the passed even number.
+
+// ###Examples:
+
+// pattern(9):
+
+// 1
+// 333
+// 55555
+// 7777777
+// 999999999
+// pattern(6):
+
+// 1
+// 333
+// 55555
+
+function pattern(n){
+ let newArr=[];
+  for(let i=1;i<=n;i++) {
+    let temp="";
+    for(let j=1;j<=i;j++) {
+      temp=temp+i;
+    }
+    newArr.push(temp);
+  }
+  for(let j=0;j<newArr.length;j++) {
+    if(newArr[j]%2===0) {
+      newArr.splice(j,1);
+    }
+  }
+  newArr=newArr.join("\n");
+  return newArr;
+}
