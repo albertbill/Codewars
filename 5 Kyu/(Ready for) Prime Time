@@ -1,0 +1,23 @@
+// We need prime numbers and we need them now!
+// Write a method that takes a maximum bound and returns all primes up to and including the maximum bound.
+
+// For example:
+// prime(11);
+// Should return an array that looks like this:
+// [2, 3, 5, 7, 11]
+
+const prime = (num) => {
+  let res = [];
+  for(let i=2;i<=num;i++) {
+    if(isElementPrime(i)) {
+      res.push(i);
+    }
+  }
+  return res;
+}
+
+const isElementPrime = (num) => {
+  for(let i = 2; i < num; i++)
+    if(num % i === 0) return false;
+  return num > 1;
+}
