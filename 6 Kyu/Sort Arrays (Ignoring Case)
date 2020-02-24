@@ -1,0 +1,15 @@
+//Sort the given strings in alphabetical order, case insensitive. For example:
+
+//["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
+//["C", "d", "a", "B"])              -->  ["a", "B", "C", "d"]
+
+const sortme = (names) => {
+  const sorted = names.sort(function(a, b) {
+    let comparison = a.toLowerCase().localeCompare(b.toLowerCase());
+    if (comparison === 0) {
+        return a.localeCompare(b);
+    }
+    return comparison;
+  });
+  return sorted;
+}
