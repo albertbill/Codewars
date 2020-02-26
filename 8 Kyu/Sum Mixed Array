@@ -1,0 +1,16 @@
+// Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+
+// Return your answer as a number.
+
+function sumMix(x){
+  for(let i=0;i<x.length;i++) {
+    if(Number.isInteger(x[i]) === false) {
+      x.splice(i, 1, parseInt(x[i]));
+    }
+  }
+  let hasil=0;
+  for(let value of x) {
+    hasil = hasil + value;
+  }
+  return hasil;
+}
